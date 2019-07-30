@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="scidumodule">
+<head>
+  
+</head>
+<body ng-controller="ADDctrl">
+<h1>ADD page</h1>
+    
+        <div>
+            <h3>Enter EMP Details</h3>
+            <div>
+                <label>EMPID</label>
+                <input type="text" ng-model="empid" name="empid" />
+            </div>
+            <div>
+                <label>Name</label>
+                <input type="text" ng-model="name" name="name" />
+            </div>
+            <div>
+                <label>Place</label>
+                <input type="text" ng-model="place" name="place" />
+            </div>
+            <div>
+                <button class="btn btn-success" ng-click="SaveInsert()">Save</button>
+                <button class="btn btn-warn">Cancel</button>
+            </div>
+        </div>
+        {{empid}}
+    </body>
+
+</html>

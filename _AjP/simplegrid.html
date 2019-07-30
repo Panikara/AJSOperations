@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="mainmodule">
+<head>
+    <style>
+    .gridStyle
+    {
+    border: 5px solid #d4d4d4;
+    width: 400px;
+    height: 200px;
+    }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
+    <script>
+        var app = angular.module("mainmodule", ['ngGrid']);
+        app.controller("ctrl", function ($scope) {
+            $scope.Data = [{ Name: "Sachin", Skill: "ASP.NET", location: "Delhi" },
+                             { Name: "Ramesh", Skill: "C#.NET, VB", location: "Chenai" },
+                            { Name: "Pradeep", Skill: "ASP.NET MVC", location: "Bangalore" },
+                             { Name: "Manas", Skill: "SQL Server", location: "Chenai" },
+                           { Name: "Sachin", Skill: "ASP.NET", location: "Bangalore" }, ];
+            
+            $scope.gdata = { data: 'Data' };
+            console.log(gdata);
+        })
+    </script>
+</head>
+<body ng-controller="ctrl">
+
+<div class="gridStyle" ng-grid="gdata"></div>
+</body>
+</html>

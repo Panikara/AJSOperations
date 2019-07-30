@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script>
+       
+    </script>
+</head>
+
+<body >
+    <form name="myForm">
+        Name:
+        <input name="myInput" ng-model="myInput" required>
+        
+        <span ng-show="myForm.myInput.$touched && myForm.myInput.$invalid">The name is required</span>
+
+        <select ng-model="ss">
+            <option value="Sa">Sa</option>
+            <option value="Ma">Ma</option>
+            <option value="Ba">Ba</option>
+        </select>
+     </form>
+
+    <div ng-switch="ss">
+        <div ng-switch-when="Sa">
+            <h3>Welocme Sa</h3>
+        </div>
+        <div ng-switch-when="Ma">
+            <h3>Welocme Ma</h3>
+        </div>
+        <div ng-switch-when="Ba">
+            <h3>Welocme Ba</h3>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+   
+     <script>
+        var app = angular.module("AppModule",[]);
+        app.controller("c1", function ($scope, $window) {
+            $scope.name = "";
+            $scope.Password = "";
+            $scope.myusers = [{
+                username: 'user1',
+                password: '12'
+            }, {
+                username: 'user2',
+                password: '123'
+            }];
+            angular.forEach($scope.myusers,function(x){
+                $scope.check = function () {
+                    if (x.username == $scope.name && x.password == $scope.Password) {
+                       // alert("success");
+                        $window.location.href = '/welcome.html';
+                      
+                    }
+                    else {
+                        alert("Failure");
+                    }
+                }
+            })
+
+           
+        })
+    </script>
+</head>
+<body ng-controller="c1">
+
+    Name:<input type="text" name="name" ng-model="name" />
+    <br/>
+    Password:<input type="password" name="Password" ng-model="Password" />
+    <br/>
+    <button ng-click="check()">Submit</button>
+</body>
+</html>

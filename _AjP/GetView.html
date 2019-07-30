@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html ng-app="scidumodule">
+<head>
+    
+</head>
+<body ng-controller="Getctrl">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Place</th>
+        </tr>
+        <tr ng-repeat="s in show">
+            <td>{{s.empid}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.place}}</td>
+        </tr>
+    </table>
+</body>
+</html>

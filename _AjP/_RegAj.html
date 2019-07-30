@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script>
+        var Reg = angular.module("AppModule", []);
+        Reg.controller("c1", function () {
+
+        })
+    </script>
+</head>
+<body>
+    <h3>Simple Ajs Registration Form</h3>
+    <form name="myForm">
+        <lable>Name</lable>
+        <input type="text" name="name" ng-model="name" required />
+        <span style="color:red" ng-show="myForm.name.$touched && myForm.name.$invalid ">Name Required ..</span>
+        <br/><br/>
+        <label>Email</label>
+        <input type="email" name="email" ng-model="email" required />
+        <span style="color:red" ng-show="myForm.email.$touched && myForm.email.$invalid ">Email Contains @ and Gmail.com ..</span>
+        <br /><br />
+        <label>Password</label>
+        <input type="password" name="password" ng-model="password" ng-maxlength="8" ng-minlength="4" ng-pattern="/^[a-zA-Z]{4,10}$/" required />
+        <span style="color:red" ng-show="myForm.password.$touched && myForm.password.$invalid ">Max 8 char and Min 4 char</span>
+        <br /><br/>
+        <label>ConfirmPassword</label>
+        <input type="password" name="cpassword" ng-model="cpassword" ng-maxlength="8" ng-minlength="4" ng-pattern="/^[a-zA-Z]{4,10}$/" required compare-to="password" />
+        <span style="color:red" ng-show="myForm.cpassword.$touched && myForm.cpassword.$invalid && password!=cpassword ">Cpassword dont match Password</span>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script>
+        var app = angular.module("AppModule", []);
+        app.controller("c1", f1);
+        function f1($scope,$http) {
+            $scope.msg = "";
+            $http.get("http://localhost:50880/Sinform.html").then(function (response) {
+                console.log(response.data);
+                $scope.msg = response.data;
+            })
+        }
+    </script>
+</head>
+<body ng-controller="c1">
+    <p>Hi.....</p>
+    {{msg}}
+</body>
+</html>

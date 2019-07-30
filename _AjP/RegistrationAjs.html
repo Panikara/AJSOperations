@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="OpModule">
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="Rjs.js"></script>
+   
+</head>
+<body ng-controller="myctrl">
+    <div>
+        <h3>Enter EMP Details</h3>
+        <div>
+            <label>EMPID</label>
+            <input type="text" ng-model="empid" name="empid" />
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" ng-model="name" name="name" />
+        </div>
+        <div>
+            <label>Place</label>
+            <input type="text" ng-model="place" name="place" />
+        </div>
+        <div>
+            <button class="btn btn-success" ng-click="SaveInsert()">Save</button>
+            <button class="btn btn-warn">Cancel</button>
+        </div>
+    </div>
+    {{empid}}
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script>
+
+    </script>
+    <style>
+       span.ng-show {
+    background-color:red;
+}
+    </style>
+</head>
+<body>
+    <div style="text-align:center">
+        <h1>Simple Aj Validations</h1>
+        <form name="details">
+            Name:<input type="text" name="name" ng-model="name" required />
+            <span ng-show="details.name.$touched && details.name.$invalid">Required Field</span>
+            <br/>
+            Email:<input tyep="email" name="email" ng-model="email" required />
+            <span ng-show="details.email.$touched && details.email.$invalid">email Required</span>
+            <br/>
+            Phone:<input tyep="text" name="phone" ng-model="phone" required ng-maxlength="10" ng-pattern="[0,9]{10}" />
+            <span ng-show="details.phone.$touched && details.phone.$invalid">Maxi 10 number</span>
+        </form>
+        
+    </div>
+</body>
+</html>

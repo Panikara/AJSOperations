@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script>
+        var app = angular.module("AppModule", []);
+        app.controller("c1", f1);
+        function f1($scope, $http) {
+            $scope.users = {};
+
+            $scope.save = function () {
+                $http.post
+                    ("https://jsonplaceholder.typicode.com/users", JSON.stringify($scope.users)).then(function (response) {
+                    console.log(response);
+                    window.alert("success");
+                  
+                    
+
+
+                });
+                
+            }
+        }
+    </script>
+</head>
+<body ng-controller="c1">
+    <form>
+        ID
+        <input type="text" name="id" ng-model="users.id" />
+        <br />
+        Name
+        <input type="text" name="name" ng-model="users.name" />
+        <br />
+        Email
+        <input type="email" name="email" ng-model="users.email" />
+        <br />
+        <button ng-click="save()">Save</button>
+    </form>
+</body>
+</html>

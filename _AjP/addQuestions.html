@@ -1,0 +1,17 @@
+﻿<html ng-app="Ksmodule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
+</head>
+<body ng-controller="addQuestioncontroller">
+    <form>
+
+        Title <input type="text" name="title" ng-model="question.title"> <br>
+        Description <textarea name="description" ng-model="question.description"></textarea> <br>
+
+        <button ng-click="addQuestion();">Submit</button>
+
+    </form>
+</body>
+
+</html>

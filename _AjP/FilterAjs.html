@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script>
+        var app = angular.module("AppModule", []);
+        app.controller("c1", f1);
+        function f1($scope) {
+            $scope.msg = "abcd";
+            $scope.price = 55.6;
+        }
+    </script> 
+</head>
+<body ng-controller="c1">
+    {{msg | uppercase}}
+    {{price | currency:'2.2-3'}}
+</body>
+</html>

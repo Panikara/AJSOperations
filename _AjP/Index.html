@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
+    <script>
+        var app = angular.module("AppModule", ['ngRoute']);
+        app.config(function ($routeProvider) {
+            $routeProvider.when("/home", {
+                templateUrl: "home.html"
+            })
+            $routeProvider.when("/Contact", {
+                templateUrl: "Contact.html"
+            })
+            $routeProvider.when("/About", {
+                templateUrl: "About.html"
+            })
+            $routeProvider.when("/", {
+                templateUrl: "home.html"
+            })
+           
+
+        })
+    </script>
+</head>
+<body>
+<h1>SS Makers Pvt.ld</h1>
+    <hr />
+    <a href="#!home">Home</a>|
+    <a href="#!Contact">Contact</a>|
+    <a href="#!About">About</a>
+    <hr />
+    <div ng-view>
+
+    </div>
+    <h3>@CopyRights SS Makers</h3>
+</body>
+</html>

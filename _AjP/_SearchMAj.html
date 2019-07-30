@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("AppModule", []);
+        app.controller("c1", f1);
+        function f1($scope, $http) {
+            $scope.movieName = "";
+            $scope.movies =[];
+            $scope.search = function () {
+               
+                $http.get("http://www.omdbapi.com/?i=tt3896198&apikey=c5c57e30&s=" + $scope.movieName).then(function (response) {
+                   
+                    alert(response.data);
+
+                    console.log(response.data);
+                    
+                    $scope.movies = response.data.Search;
+                    
+           
+                
+                })
+            }
+        }
+    </script>
+</head>
+<body ng-controller="c1">
+    Enter MovieName<input type="text" name="movieName" ng-model="movieName"/>
+    <button ng-click="search();">Search</button>
+    <table>
+        <tr ng-repeat="x in movies">
+            <td><img ng-src="{{x.Poster}}" ><td>
+            <td>{{x.Title}}</td>
+            <td>{{x.Year}}</td>
+        </tr>
+    </table>
+</body>
+</html>

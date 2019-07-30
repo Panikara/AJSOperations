@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html ng-app="Sorting">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
+    <script>
+        var app = angular.module("Sorting", []);
+        app.controller("myctrl", demo);
+        function demo($scope) {
+            var list = [{ Name: "Sachin", Skill: "ASP.NET", location: "Delhi" },
+                             { Name: "Ramesh", Skill: "C#.NET, VB", location: "Chenai" },
+                            { Name: "Pradeep", Skill: "ASP.NET MVC", location: "Bangalore" },
+                             { Name: "Manas", Skill: "SQL Server", location: "Chenai" },
+                           { Name: "Sachin", Skill: "ASP.NET", location: "Bangalore" }, ];
+            $scope.details = list;
+            $scope.column = 'Name'
+            $scope.rev=false;
+            $scope.sortname = function (col) {
+                $scope.column=col;
+                if ($scope.rev==false) {
+                    $scope.rev = true
+                }
+                else {
+                    $scope.rev = false
+                }
+
+            }
+            $scope.sortcls = function (col) {
+                if ($scope.column == col) {
+                    if ($scope.rev) {
+                     
+                    }
+                    else {
+                       return''
+                    }
+                }
+
+            }
+        }
+                  
+    </script>
+</head>
+<body ng-controller="myctrl">
+    <input type="checkbox" ng-model="hide" />
+    <table border="1">
+        <tr>
+            <th ng-click="sortname('Name')">Name</th>
+            <th ng-click="sortname('Skill')">Skill</th>
+            <th ng-click="sortname('location')" ng-hide="hide">location</th>
+        </tr>
+        <tr ng-repeat="d in details | orderBy:column :reverse">
+            <td>{{d.Name}}</td>
+            <td>{{d.Skill}}</td>
+            <td  ng-hide="hide">{{d.location}}</td>
+        </tr>
+   
+    </table>
+</body>
+</html>

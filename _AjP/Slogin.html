@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <script>
+        var app = angular.module("AppModule", []);
+        app.controller("c1", f1);
+        function f1($scope) {
+            $scope.name = "";
+            $scope.save = function () {
+                alert(myForm.name);
+            }
+         
+           
+        }
+    </script>
+</head>
+<body ng-controller="c1">
+    <form name="myForm">
+        Name:<input type="text" name="name" ng-model="name" />
+        <br />
+        Password:<input type="password" name="password" ng-model="password" />
+        <br />
+        <button ng-click="save()">Submit</button>
+    </form>
+</body>
+</html>
